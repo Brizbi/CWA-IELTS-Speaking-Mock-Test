@@ -242,8 +242,9 @@
         <h3>Part 1</h3>
         <ul>
           <li>You will be asked questions about yourself, your home, work or studies, and other familiar topics.</li>
-          <li>You will be given a total of 5 minutes to complete Part 1.</li>
-          <li>If you finish before the 5 minutes are up, please click the Next button to move to the next part.</li>
+          <li>Please read each question aloud before giving your answer.</li>
+          <li>You will be given a total of 6 minutes to complete Part 1.</li>
+          <li>If you finish before the 6 minutes are up, please click the Next button to move to the next part.</li>
         </ul>
       </div>
     </div>
@@ -264,13 +265,14 @@
       <span class="header-title">Part 1 — Questions</span>
       <div class="header-right">
         <span class="rec-dot" id="rec2"></span>
-        <span class="timer-badge" id="timer2">5:00</span>
+        <span class="timer-badge" id="timer2">6:00</span>
         <button class="btn-next" onclick="nextFromPart(2, 3)">Next <i class="ti ti-arrow-right"></i></button>
       </div>
     </div>
     <div class="content">
       <div class="page-label">Part 1</div>
       <div class="page-title">About you and familiar topics</div>
+      <div class="countdown-notice" style="margin-bottom:16px; display:inline-flex;"><i class="ti ti-volume"></i> &nbsp;Please read each question aloud before giving your answer.</div>
       <ul class="questions-list">
         <li class="question-item"><div class="question-num">Question 1</div>What games are popular in your country? <span style="color:var(--color-text-tertiary)">[Why?]</span></li>
         <li class="question-item"><div class="question-num">Question 2</div>Do you play any games? <span style="color:var(--color-text-tertiary)">[Why/Why not?]</span></li>
@@ -299,7 +301,8 @@
         <ul>
           <li>You will see a task card (cue card) with a specific topic and several prompt questions.</li>
           <li>You have exactly 1 minute to prepare and make notes.</li>
-          <li>This is followed by 1–2 minutes of uninterrupted speaking.</li>
+          <li>Please read the cue card aloud before giving your response.</li>
+          <li>This is followed by up to 4 minutes of speaking time.</li>
         </ul>
       </div>
     </div>
@@ -312,7 +315,7 @@
       <span class="header-title">Part 2 — Cue Card</span>
       <div class="header-right">
         <span class="rec-dot" id="rec4"></span>
-        <span class="timer-badge" id="timer4" style="display:none">3:00</span>
+        <span class="timer-badge" id="timer4" style="display:none">4:00</span>
         <span class="timer-badge prep" id="prepbadge4">Prep: 1:00</span>
         <button class="btn-next" onclick="nextFromPart(4, 5)">Next <i class="ti ti-arrow-right"></i></button>
       </div>
@@ -320,6 +323,7 @@
     <div class="content">
       <div class="page-label">Part 2</div>
       <div class="page-title">Task card</div>
+      <div class="countdown-notice" style="margin-bottom:16px; display:inline-flex;"><i class="ti ti-volume"></i> &nbsp;Please read the cue card aloud before giving your response.</div>
       <div class="cue-card">
         <div class="cue-card-title">Describe something you did that was new or exciting.</div>
         <div class="cue-card-prompt">You should say:</div>
@@ -351,7 +355,8 @@
         <h3>What to expect</h3>
         <ul>
           <li>You will be asked a broader range of questions based on the topic you discussed in Part 2.</li>
-          <li>You are given a total of 5 minutes to complete this part.</li>
+          <li>Please read each question aloud before giving your answer.</li>
+          <li>You are given a total of 6 minutes to complete this part.</li>
         </ul>
       </div>
     </div>
@@ -364,13 +369,14 @@
       <span class="header-title">Part 3 — Discussion</span>
       <div class="header-right">
         <span class="rec-dot" id="rec6"></span>
-        <span class="timer-badge" id="timer6">5:00</span>
+        <span class="timer-badge" id="timer6">6:00</span>
         <button class="btn-next" onclick="nextFromPart(6, 7)">Next <i class="ti ti-arrow-right"></i></button>
       </div>
     </div>
     <div class="content">
       <div class="page-label">Part 3</div>
       <div class="page-title">Discussion questions</div>
+      <div class="countdown-notice" style="margin-bottom:16px; display:inline-flex;"><i class="ti ti-volume"></i> &nbsp;Please read each question aloud before giving your answer.</div>
       <div class="question-group-label">Doing new things</div>
       <ul class="questions-list">
         <li class="question-item"><div class="question-num">Question 1</div>Why do you think some people like doing new things?</li>
@@ -398,7 +404,7 @@
     <div class="congrats-wrap">
       <i class="ti ti-circle-check congrats-icon"></i>
       <div class="congrats-title">Well done! You've completed the speaking test.</div>
-      <div class="congrats-body">All three parts are now finished. You may now leave the cubicle. Your recordings are ready to download below.</div>
+      <div class="congrats-body">All three parts are now finished. You may now leave the cubicle. Please download your recordings below and rename each file using the format:<br><br><strong style="color:var(--color-text-primary)">"Teacher Name - Part 1"</strong><br><span style="font-size:13px">e.g. Brendo - Part 1, Brendo - Part 2, Brendo - Part 3</span></div>
       <div class="downloads-section">
         <div class="downloads-label">Your recordings</div>
         <div class="download-item">
@@ -539,7 +545,7 @@
         statusEl.innerHTML = '<i class="ti ti-microphone"></i> Recording in progress…';
         startRecording(2).then(mr => {
           if (!mr) { statusEl.innerHTML = '<i class="ti ti-microphone-off"></i> Microphone access denied.'; recDot.classList.remove('visible'); return; }
-          runTimer(2, timerEl, 5 * 60, () => {
+          runTimer(2, timerEl, 6 * 60, () => {
             stopRecording(2);
             statusEl.innerHTML = '<i class="ti ti-check"></i> Recording complete.';
           });
@@ -578,7 +584,7 @@
             statusEl.innerHTML = '<i class="ti ti-microphone"></i> Now speaking — recording in progress…';
             startRecording(4).then(mr => {
               if (!mr) { statusEl.innerHTML = '<i class="ti ti-microphone-off"></i> Microphone access denied.'; recDot.classList.remove('visible'); return; }
-              runTimer(4, timerEl, 3 * 60, () => {
+              runTimer(4, timerEl, 4 * 60, () => {
                 stopRecording(4);
                 statusEl.innerHTML = '<i class="ti ti-check"></i> Recording complete.';
               });
@@ -608,7 +614,7 @@
         statusEl.innerHTML = '<i class="ti ti-microphone"></i> Recording in progress…';
         startRecording(6).then(mr => {
           if (!mr) { statusEl.innerHTML = '<i class="ti ti-microphone-off"></i> Microphone access denied.'; recDot.classList.remove('visible'); return; }
-          runTimer(6, timerEl, 5 * 60, () => {
+          runTimer(6, timerEl, 6 * 60, () => {
             stopRecording(6);
             statusEl.innerHTML = '<i class="ti ti-check"></i> Recording complete.';
           });
